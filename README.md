@@ -38,6 +38,8 @@ imprt_large.css
 ```
 
 Output:
+
+imprt.css
 ```css
 headers {
   background-color: orange;
@@ -87,8 +89,8 @@ Input:
 Output:
 
 
-Usage
-========
+Usage (in node)
+=================
 
 ```js
 var provecss = require('provecss');
@@ -111,6 +113,10 @@ Options:
 * path: File path that contain @import.
 * base: Normally provecss will parsed the same directory as in file path. you could explicitly pass a `path` option for will-be-import styles.
 
+Usage (in command line)
+==========================
+
+TBD
 
 Credit
 ========
