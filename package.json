@@ -1,15 +1,13 @@
 {
-  "name": "purecss",
+  "name": "provecss",
   "repository": "git://github.com/gasolin/purecss.git",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "license": "MIT",
   "description": "",
   "keywords": [
     "preprocessor",
-    "postprocessor",
     "rework",
-    "css",
-    "pure"
+    "css"
   ],
   "main": "index.js",
   "scripts": {
