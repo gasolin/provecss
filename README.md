@@ -76,8 +76,8 @@ body {
 ```
 
 
-Media Query
----------------
+Media Query Merging
+----------------------
 
 TBD
 
@@ -104,6 +104,13 @@ To inline @import files, you could pass `path` option and purecss will search an
 ```
 purecss(input,{path:"test/features/imprt.css"});
 ```
+
+Options:
+
+* browsers: Pass [autoprefixer](https://github.com/ai/autoprefixer) options. pass `ff28` will generate firefox only prefixes. `purecss` won't generate prefixes by default.
+* path: File path that contain @import.
+* base: Normally purecss will parsed the same directory as in file path. you could explicitly pass a `path` option for will-be-import styles.
+
 
 Credit
 ========
