@@ -6,6 +6,9 @@ var path = require('path');
 var Stream = require('stream').Readable;
 
 var features = [
+  'calc',
+  'color',
+  'hex',
   'vars'
 ];
 
@@ -34,7 +37,7 @@ describe('features', function () {
 /**
  * @import feature
  */
-describe('@import feature', function () {
+describe('@import inlining feature', function () {
   it('should add path option support', function () {
       var input = read('features/imprt');
       var output = read('features/imprt.out');
@@ -51,6 +54,36 @@ describe('@import feature', function () {
                             path:"imprt.css",
                             base: "test/features/"
                            }).trim(),
+                   output.trim());
+  });
+});
+
+/**
+ * auto prefix feature
+ */
+describe('auto prefix feature', function () {
+  it('should add browser option support', function () {
+      var input = read('features/prefixes');
+      var output = read('features/prefixes.out');
+      assert.equal(provecss(input,
+                   {browsers: ['> 1%', 'last 2 versions',
+                               'ff 24', 'opera 12.1']}).trim(),
+                   output.trim());
+  });
+
+  it('should add chrome specific support', function () {
+      var input = read('features/prefixes');
+      var output = read('features/prefixes_cr9.out');
+      assert.equal(provecss(input,
+                   {browsers: ['chrome 9']}).trim(),
+                   output.trim());
+  });
+
+  it('should add firefox specific support', function () {
+      var input = read('features/prefixes');
+      var output = read('features/prefixes_ff24.out');
+      assert.equal(provecss(input,
+                   {browsers: ['firefox 24']}).trim(),
                    output.trim());
   });
 });

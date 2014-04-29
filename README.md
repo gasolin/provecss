@@ -61,11 +61,11 @@ Input:
 
 ```css
 :root {
-  --red: #F00;
+  --main-color: orange;
 }
 
 body {
-  color: var(--red);
+  color: var(--main-color);
 }
 ```
 
@@ -73,7 +73,7 @@ Output:
 
 ```css
 body {
-  color: #0F0;
+  color: orange;
 }
 ```
 

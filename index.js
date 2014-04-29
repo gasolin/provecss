@@ -2,7 +2,6 @@ var color = require('rework-color-function');
 var prefixes = require('autoprefixer');
 var rework = require('rework');
 var calc = require('rework-calc');
-var variants = require('rework-font-variant');
 var hex = require('rework-hex-alpha');
 var vars = require('rework-vars')();
 var imprt  = require('rework-importer');
@@ -52,6 +51,5 @@ function provecss (string, options) {
     .use(hex)
     .use(color)
     .use(calc)
-    .use(variants)
     .toString(options);
 }
