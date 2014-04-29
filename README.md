@@ -15,6 +15,11 @@ var input = path.resolve(__dirname, 'input.css');
 var output = purecss(input);
 ```
 
+To inline @import files, you could pass `path` option and purecss will search and inline import files in `path`'s directory:
+
+```
+purecss(input,{path:"test/features/imprt.css"});
+```
 
 Credit
 ========
