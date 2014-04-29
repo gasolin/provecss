@@ -9,10 +9,10 @@ var imprt  = require('rework-importer');
 var path = require('path');
 
 /**
-* Expose `purecss`.
+* Expose `provecss`.
 */
 
-module.exports = purecss;
+module.exports = provecss;
 
 /**
 * Rework a CSS `string`
@@ -22,7 +22,7 @@ module.exports = purecss;
 * @return {String}
 */
 
-function purecss (string, options) {
+function provecss (string, options) {
   var browsers;
   var import_path, import_base;
   if(options && options.browsers) {

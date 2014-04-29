@@ -1,7 +1,7 @@
 var assert = require('assert');
 var child = require('child_process');
 var fs = require('fs');
-var purecss = require('../index.js');
+var provecss = require('../index.js');
 var path = require('path');
 var Stream = require('stream').Readable;
 
@@ -10,11 +10,11 @@ var features = [
 ];
 
 /**
- * purecss node API tests.
+ * provecss node API tests.
  */
-describe('purecss', function () {
+describe('provecss', function () {
   it('should return a css string', function () {
-    assert('string' === typeof purecss('body {}'));
+    assert('string' === typeof provecss('body {}'));
   });
 });
 
@@ -26,7 +26,7 @@ describe('features', function () {
     it('should add ' + name + ' support', function () {
       var input = read('features/' + name);
       var output = read('features/' + name + '.out');
-      assert.equal(purecss(input).trim(), output.trim());
+      assert.equal(provecss(input).trim(), output.trim());
     });
   });
 });
@@ -38,7 +38,7 @@ describe('@import feature', function () {
   it('should add path option support', function () {
       var input = read('features/imprt');
       var output = read('features/imprt.out');
-      assert.equal(purecss(input,
+      assert.equal(provecss(input,
                            {path:"test/features/imprt.css"}).trim(),
                    output.trim());
   });
@@ -46,7 +46,7 @@ describe('@import feature', function () {
   it('should add base option support', function () {
       var input = read('features/imprt');
       var output = read('features/imprt.out');
-      assert.equal(purecss(input,
+      assert.equal(provecss(input,
                            {
                             path:"imprt.css",
                             base: "test/features/"
