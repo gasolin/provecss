@@ -32,6 +32,19 @@ describe('features', function () {
 });
 
 /**
+ * @import feature
+ */
+describe('@import feature', function () {
+  it('should add @import support', function () {
+      var input = read('features/imprt');
+      var output = read('features/imprt.out');
+      assert.equal(purecss(input,
+                           {path:"imprt.css"}).trim(),
+                   output.trim());
+  });
+});
+
+/**
 * Read a fixture by `filename`.
 *
 * @param {String} filename
