@@ -1,4 +1,4 @@
-purecss [![Build Status](https://travis-ci.org/mozilla-b2g/gaia.svg)](https://travis-ci.org/gasolin/purecss) [![Dependency Status](https://david-dm.org/gasolin/purecss.svg)](https://david-dm.org/gasolin/purecss)
+purecss [![Build Status](https://travis-ci.org/mozilla-b2g/gaia.svg)](https://travis-ci.org/gasolin/purecss) [![Dependency Status](https://david-dm.org/gasolin/purecss.svg)](https://david-dm.org/gasolin/purecss) [![Code Climate](https://codeclimate.com/github/gasolin/purecss.png)](https://codeclimate.com/github/gasolin/purecss)
 =======
 
 Write future-proved CSS from now.
