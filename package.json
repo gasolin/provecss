@@ -16,16 +16,15 @@
     "test": "make test"
   },
   "dependencies": {
-    "autoprefixer": "*",
-    "rework": "*",
-    "rework-calc": "*",
-    "rework-color-function": "*",
-    "rework-font-variant": "*",
-    "rework-hex-alpha": "*",
-    "rework-vars": "*"
+    "autoprefixer": "~1.1.20140429",
+    "rework": "~0.20.2",
+    "rework-calc": "~0.2.1",
+    "rework-color-function": "~1.0.0",
+    "rework-font-variant": "~1.0.0",
+    "rework-hex-alpha": "~1.0.0",
+    "rework-vars": "~3.0.0"
   },
   "devDependencies": {
-    "mocha": "*",
-    "read": "*"
+    "mocha": "~1.18.2"
   }
 }
