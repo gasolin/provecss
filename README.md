@@ -1,4 +1,4 @@
-purecss
+purecss [![Dependency Status](https://david-dm.org/gasolin/purecss.svg)](https://david-dm.org/gasolin/purecss)
 =======
 
 Write future proved CSS from now.
