@@ -1,7 +1,6 @@
 var assert = require('assert');
 var child = require('child_process');
 var fs = require('fs');
-//var myth = require('..');
 var purecss = require('../index.js');
 var path = require('path');
 var Stream = require('stream').Readable;
