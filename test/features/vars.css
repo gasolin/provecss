@@ -1,12 +1,11 @@
-
 :root {
-  --red: #F00;
+  --main-color: #F00;
 }
 
 body {
-  color: var(--red);
+  color: var(--main-color);
 }
 
 :root {
-  --red: #0F0;
+  --main-color: orange;
 }
