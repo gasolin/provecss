@@ -45,7 +45,7 @@ describe('@import inlining feature', function () {
                            {path:"test/features/imprt.css"}).trim(),
                    output.trim());
   });
-  
+
   it('should add base option support', function () {
       var input = read('features/imprt');
       var output = read('features/imprt.out');
@@ -56,6 +56,47 @@ describe('@import inlining feature', function () {
                            }).trim(),
                    output.trim());
   });
+
+  it('should generate css based on target option (core)', function () {
+      var input = read('features/imprt');
+      var output = read('features/imprt_core.out');
+      var option = {
+        path: 'test/features/imprt.css',
+        target: ['core']
+      };
+      assert.equal(provecss(input, option).trim(), output.trim());
+  });
+
+  it('should generate css based on target option (core+large)', function () {
+      var input = read('features/imprt');
+      var output = read('features/imprt_large.out');
+      var option = {
+        path: 'test/features/imprt.css',
+        target: ['core', 'large']
+      };
+      assert.equal(provecss(input, option).trim(), output.trim());
+  });
+
+  it('should generate css based on target option (core+xlarge)', function () {
+      var input = read('features/imprt');
+      var output = read('features/imprt_xlarge.out');
+      var option = {
+        path: 'test/features/imprt.css',
+        target: ['core', 'xlarge']
+      };
+      assert.equal(provecss(input, option).trim(), output.trim());
+  });
+
+  it('should generate css based on target option (core+large+xlarge)', function () {
+      var input = read('features/imprt');
+      var output = read('features/imprt.out');
+      var option = {
+        path: 'test/features/imprt.css',
+        target: ['core', 'large' , 'xlarge']
+      };
+      assert.equal(provecss(input, option).trim(), output.trim());
+  });
+
 });
 
 /**

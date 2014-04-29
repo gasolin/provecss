@@ -15,13 +15,13 @@
   },
   "dependencies": {
     "autoprefixer": "~1.1.20140429",
+    "css-whitespace": "~1.1.0",
     "rework": "~0.20.2",
     "rework-calc": "~0.2.1",
     "rework-color-function": "~1.0.0",
     "rework-font-variant": "~1.0.0",
     "rework-hex-alpha": "~1.0.0",
-    "rework-vars": "~3.0.0",
-    "rework-importer": "~0.3.1"
+    "rework-vars": "~3.0.0"
   },
   "devDependencies": {
     "mocha": "~1.18.2"
