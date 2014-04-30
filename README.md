@@ -138,3 +138,8 @@ Credit
 ========
 `provecss` is based on [rework](https://github.com/reworkcss/rework).
 Forked from [myth](https://github.com/segmentio/myth) to fit our needs.
+
+License
+========
+
+MIT
