@@ -124,12 +124,13 @@ To inline @import files, you could pass `path` option and `provecss` will search
 provecss(input, {path: 'test/features/imprt.css'});
 ```
 
-Options:
+**Options**
 
-* browsers: Pass [autoprefixer](https://github.com/ai/autoprefixer) options. pass `ff28` will generate firefox only prefixes. `provecss` won't generate prefixes by default.
-* path: File path that contain @import.
-* base: Normally provecss will parsed the same directory as in file path. you could explicitly pass a `path` option for will-be-import styles.
-* target: While precoess @import, The postfix `_<target>` will be filtered.
+* `browsers`: Pass [autoprefixer](https://github.com/ai/autoprefixer) options. pass `firefox 24` or `chrome 10` will generate browser only prefixes. `provecss` won't generate prefixes by default.
+* `path`: File path that contain @import.
+* `base`: Normally provecss will parsed the same directory as in file path. you could explicitly pass a `path` option for will-be-import styles.
+* `target`: While precoess @import, The postfix `_<target>` will be filtered.
+* `vars`: replace css variable while `true`.
 
 Usage (in command line)
 ==========================
