@@ -3,7 +3,7 @@ provecss [![Build Status](https://travis-ci.org/mozilla-b2g/gaia.svg)](https://t
 
 Write future-proved CSS from now.
 
-`provecss` let us able to use [@import](https://developer.mozilla.org/en-US/docs/Web/CSS/@import), [variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables), [media queries](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries) in mobile-first webapp development without worring the performance. `provecss` could preprocess the origin css file and generate backward compatible css styles.
+`provecss` let us able to use [@import](https://developer.mozilla.org/en-US/docs/Web/CSS/@import), [@media queries](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries), [variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables) in mobile-first webapp development without worring the performance. `provecss` could preprocess the origin css file and generate backward compatible css styles.
 
 Features
 ========
@@ -38,8 +38,6 @@ imprt_large.css
 ```
 
 Output:
-
-imprt.css
 ```css
 headers {
   background-color: orange;
@@ -51,6 +49,29 @@ headers {
   }
 }
 ```
+
+Media Query filtering
+----------------------
+
+Pass `target` option as ['core'] to filter out other styles.
+
+Output:
+```css
+headers {
+  background-color: orange;
+}
+```
+
+Media Query Merging
+----------------------
+
+TBD
+
+Input:
+
+
+Output:
+
 
 CSS Variables replacing
 --------------------------
@@ -76,17 +97,6 @@ body {
   color: orange;
 }
 ```
-
-
-Media Query Merging
-----------------------
-
-TBD
-
-Input:
-
-
-Output:
 
 
 Usage (in node)
@@ -117,6 +127,7 @@ Options:
 * browsers: Pass [autoprefixer](https://github.com/ai/autoprefixer) options. pass `ff28` will generate firefox only prefixes. `provecss` won't generate prefixes by default.
 * path: File path that contain @import.
 * base: Normally provecss will parsed the same directory as in file path. you could explicitly pass a `path` option for will-be-import styles.
+* target: While precoess @import, The postfix `_<target>` will be filtered.
 
 Usage (in command line)
 ==========================
