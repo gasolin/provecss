@@ -4,7 +4,7 @@ var rework = require('rework');
 var calc = require('rework-calc');
 var hex = require('rework-hex-alpha');
 var vars = require('rework-vars')();
-var imprt  = require('rework-importer');
+var imprt  = require('./import.js');
 var path = require('path');
 
 /**
@@ -22,30 +22,29 @@ module.exports = provecss;
 */
 
 function provecss (string, options) {
-  var browsers;
-  var import_path, import_base;
-  if(options && options.browsers) {
-    browsers = options.browsers;
+  options             = options || {};
+  this.browsers       = options.browsers;
+  if(options.path) {
+    this.import_path  = path.basename(options.path);
+    this.import_base  = options.base || path.dirname(options.path);
   }
-  if(options && options.path) {
-    import_path = path.basename(options.path);
-    if(!options.base) {
-      import_base = path.dirname(options.path);
-    } else {
-      import_base = options.base;
-    }
-  }
+  this.layout_target  = options.target;
+
   //not run autoprefixer by default
-  if(browsers) {
-    string = prefixes(browsers).process(string).css;
+  if(this.browsers) {
+    string = prefixes(this.browsers).process(string).css;
   }
-  if(import_path) {
-    string = rework(string)
-      .use(imprt({
-        path: import_path,
-        base: import_base
-      })).toString();
+
+  //handle import inlining if any
+  if(this.import_path) {
+    var opts = {
+      path: this.import_path,
+      base: this.import_base,
+      target: this.layout_target
+    };
+    string = rework(string).use(imprt(opts)).toString();
   }
+
   return rework(string, options)
     .use(vars)
     .use(hex)
