@@ -92,19 +92,24 @@ Output:
 Usage (in node)
 =================
 
+provecss input/output are strings. So you could chain it in any preprocessing position.
+
 ```js
 var provecss = require('provecss');
 var fs = require('fs');
 
 // read file
-var input = path.resolve(__dirname, 'input.css');
+var input = fs.readFileSync('imprt.css', 'utf8');
 var output = provecss(input);
+
+// write file
+fs.writeFileSync('imprt.out.css', output);
 ```
 
 To inline @import files, you could pass `path` option and `provecss` will search and inline import files in `path`'s directory:
 
 ```
-provecss(input,{path:"test/features/imprt.css"});
+provecss(input, {path: 'test/features/imprt.css'});
 ```
 
 Options:
