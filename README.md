@@ -78,6 +78,8 @@ CSS Variables replacing
 
 Thanks to [rework-vars](https://github.com/visionmedia/rework-vars)
 
+Pass `vars` option as `true` to opt-in variabls replacing.
+
 Input:
 
 ```css
@@ -137,7 +139,7 @@ TBD
 Credit
 ========
 `provecss` is based on [rework](https://github.com/reworkcss/rework).
-Forked from [myth](https://github.com/segmentio/myth) to fit our needs.
+Forked from [myth](https://github.com/segmentio/myth) and [rework-importer](https://github.com/simme/rework-importer) to fit our needs.
 
 License
 ========

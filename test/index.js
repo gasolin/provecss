@@ -29,7 +29,9 @@ describe('features', function () {
     it('should add ' + name + ' support', function () {
       var input = read('features/' + name);
       var output = read('features/' + name + '.out');
-      assert.equal(provecss(input).trim(), output.trim());
+      var option = {};
+      option[name] = true;
+      assert.equal(provecss(input, option).trim(), output.trim());
     });
   });
 });

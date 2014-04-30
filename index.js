@@ -4,7 +4,7 @@ var rework = require('rework');
 var calc = require('rework-calc');
 var hex = require('rework-hex-alpha');
 var vars = require('rework-vars')();
-var imprt  = require('./import.js');
+var imprt = require('./import.js');
 var path = require('path');
 
 /**
@@ -21,22 +21,23 @@ module.exports = provecss;
 * @return {String}
 */
 
-function provecss (string, options) {
+function provecss(string, options) {
   options             = options || {};
   this.browsers       = options.browsers;
-  if(options.path) {
+  if (options.path) {
     this.import_path  = path.basename(options.path);
     this.import_base  = options.base || path.dirname(options.path);
   }
   this.layout_target  = options.target;
+  this.vars           = options.vars;
 
   //not run autoprefixer by default
-  if(this.browsers) {
+  if (this.browsers) {
     string = prefixes(this.browsers).process(string).css;
   }
 
   //handle import inlining if any
-  if(this.import_path) {
+  if (this.import_path) {
     var opts = {
       path: this.import_path,
       base: this.import_base,
@@ -45,8 +46,11 @@ function provecss (string, options) {
     string = rework(string).use(imprt(opts)).toString();
   }
 
+  if (this.vars) {
+    string = rework(string).use(vars).toString();
+  }
+
   return rework(string, options)
-    .use(vars)
     .use(hex)
     .use(color)
     .use(calc)
