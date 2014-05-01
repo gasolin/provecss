@@ -13,7 +13,7 @@ Import inlining
 
 Thanks to [rework-importer](https://github.com/simme/rework-importer)
 
-Input:
+Input files:
 
 imprt.css
 ```css
@@ -58,30 +58,38 @@ headers {
     background-color: black;
   }
 }
+
+@media (min-width: 1024px) {
+  headers {
+    background-color: red;
+  }
+}
 ```
 
 Media Query filtering
 ----------------------
 
-Pass `target` option as ['core'] to filter out other styles.
+Pass `target` option as ['core', 'large'] to filter out other styles.
 
 Output:
 ```css
 headers {
   background-color: orange;
 }
-```
 
-Media Query extracting
-----------------------
-
-Pass `deviceInfo` option as
-```js
-{
-  width: '1024px',
-  height: '768px'
+@media (min-width: 768px) {
+  headers {
+    background-color: black;
+  }
 }
 ```
+
+Media Query matching
+----------------------
+
+An alternative way is to pass `deviceInfo` option as filter creteria.
+
+Input with `{ width: '1024px', height: '768px' }` to match proper size of @media.
 
 Output:
 ```css
@@ -96,14 +104,11 @@ headers {
 }
 ```
 
-Pass `deviceInfo` option as
-```js
-{
-  width: '1024px',
-  height: '768px'
-}
-```
-and `extractQuery` option as `true`
+
+Media Query extracting
+----------------------
+
+Pass `deviceInfo` option as `{ width: '1024px', height: '768px' }` and `extractQuery` option as `true`
 
 Output:
 ```css
@@ -115,6 +120,9 @@ headers {
   background-color: red;
 }
 ```
+
+In result, the was-@media section just overwrited the origin style.
+
 
 CSS Variables replacing
 --------------------------
