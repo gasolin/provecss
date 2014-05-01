@@ -6,6 +6,8 @@ var hex = require('rework-hex-alpha');
 var vars = require('rework-vars')();
 var imprt = require('./import.js');
 var path = require('path');
+var move = require('rework-move-media')();
+var extract = require('./css-mediaquery-extract.js');
 
 /**
 * Expose `provecss`.
@@ -30,6 +32,8 @@ function provecss(string, options) {
   }
   this.layout_target  = options.target;
   this.vars           = options.vars;
+  this.device_info    = options.deviceInfo;
+  this.extract_query  = options.extractQuery;
 
   //not run autoprefixer by default
   if (this.browsers) {
@@ -44,6 +48,22 @@ function provecss(string, options) {
       target: this.layout_target
     };
     string = rework(string).use(imprt(opts)).toString();
+  }
+
+  //filter media query if any
+  if (this.device_info) {
+    if (!this.device_info.width || !this.device_info.height) {
+      throw new Error('Must provide device width and device height');
+    }
+    var extractOptions = {
+      deviceOptions: {
+        width: this.device_info.width,
+        height: this.device_info.height,
+        orientation: this.device_info.orientation || 'any'
+      },
+      extractQuery: extract_query
+    };
+    string = rework(string).use(move).use(extract(extractOptions)).toString();
   }
 
   if (this.vars) {

@@ -1,0 +1,9 @@
+headers {
+  background-color: orange;
+}
+
+@media (min-width: 1024px) {
+  headers {
+    background-color: red;
+  }
+}

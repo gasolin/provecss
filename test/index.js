@@ -132,6 +132,38 @@ describe('auto prefix feature', function () {
 });
 
 /**
+ * filter @media feature
+ */
+describe('filter @media feature', function () {
+  it('should filter @media based on device info', function () {
+      var input = read('features/imprt');
+      var output = read('features/imprt_filter.out');
+      var option = {
+        path: 'test/features/imprt.css',
+        deviceInfo: {
+          width: '1024px',
+          height: '768px'
+        }
+      };
+      assert.equal(provecss(input, option).trim(), output.trim());
+  });
+
+  it('should filter and extract @media based on device info', function () {
+      var input = read('features/imprt');
+      var output = read('features/imprt_extract.out');
+      var option = {
+        path: 'test/features/imprt.css',
+        deviceInfo: {
+          width: '1024px',
+          height: '768px'
+        },
+        extractQuery: true
+      };
+      assert.equal(provecss(input, option).trim(), output.trim());
+  });
+});
+
+/**
 * Read a fixture by `filename`.
 *
 * @param {String} filename
