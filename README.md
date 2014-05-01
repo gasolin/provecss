@@ -19,6 +19,7 @@ imprt.css
 ```css
 @import url("imprt_core.css");
 @import url("imprt_large.css");
+@import url("imprt_xlarge.css");
 ```
 
 imprt_core.css
@@ -33,6 +34,15 @@ imprt_large.css
 @media (min-width: 768px) {
   headers {
     background-color: black;
+  }
+}
+```
+
+imprt_xlarge.css
+```css
+@media (min-width: 1024px) {
+  headers {
+    background-color: red;
   }
 }
 ```
