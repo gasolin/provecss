@@ -62,16 +62,49 @@ headers {
 }
 ```
 
-Media Query Merging
+Media Query extracting
 ----------------------
 
-TBD
-
-Input:
-
+Pass `deviceInfo` option as
+```js
+{
+  width: '1024px',
+  height: '768px'
+}
+```
 
 Output:
+```css
+headers {
+  background-color: orange;
+}
 
+@media (min-width: 1024px) {
+  headers {
+    background-color: red;
+  }
+}
+```
+
+Pass `deviceInfo` option as
+```js
+{
+  width: '1024px',
+  height: '768px'
+}
+```
+and `extractQuery` option as `true`
+
+Output:
+```css
+headers {
+  background-color: orange;
+}
+
+headers {
+  background-color: red;
+}
+```
 
 CSS Variables replacing
 --------------------------
