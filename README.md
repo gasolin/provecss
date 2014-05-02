@@ -157,7 +157,13 @@ body {
 Usage (in node)
 =================
 
-provecss input/output are strings. So you could chain it in any preprocessing position.
+You can install `provecss` via npm.
+
+```
+npm install provecss --save-dev
+```
+
+`provecss` input/output are strings. So you could chain it in any preprocessing position.
 
 ```js
 var provecss = require('provecss');
