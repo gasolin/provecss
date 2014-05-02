@@ -108,7 +108,7 @@ headers {
 Media Query extracting
 ----------------------
 
-Pass `deviceInfo` option as `{ width: '1024px', height: '768px' }` and `extractQuery` option as `true`
+Pass extra `extractQuery` option as `true`
 
 Output:
 ```css
@@ -182,6 +182,8 @@ provecss(input, {path: 'test/features/imprt.css'});
 * `base`: Normally provecss will parsed the same directory as in file path. you could explicitly pass a `path` option for will-be-import styles.
 * `target`: While precoess @import, The postfix `_<target>` will be filtered.
 * `vars`: replace css variable while `true`.
+* `deviceInfo`: specify the match creteria to filter out @media conditions.
+* `extractQuery`: set to `true` to remove @media statement.
 
 Usage (in command line)
 ==========================
