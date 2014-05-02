@@ -30,10 +30,10 @@ function provecss(string, options) {
     this.import_path  = path.basename(options.path);
     this.import_base  = options.base || path.dirname(options.path);
   }
-  this.layout_target  = options.target;
+  this.media_filter  = options.media_filter;
   this.vars           = options.vars;
-  this.device_info    = options.deviceInfo;
-  this.extract_query  = options.extractQuery;
+  this.media_match    = options.media_match;
+  this.media_extract  = options.media_extract;
 
   //not run autoprefixer by default
   if (this.browsers) {
@@ -45,23 +45,23 @@ function provecss(string, options) {
     var opts = {
       path: this.import_path,
       base: this.import_base,
-      target: this.layout_target
+      target: this.media_filter
     };
     string = rework(string).use(imprt(opts)).toString();
   }
 
   //filter media query if any
-  if (this.device_info) {
-    if (!this.device_info.width || !this.device_info.height) {
+  if (this.media_match) {
+    if (!this.media_match.width || !this.media_match.height) {
       throw new Error('Must provide device width and device height');
     }
     var extractOptions = {
       deviceOptions: {
-        width: this.device_info.width,
-        height: this.device_info.height,
-        orientation: this.device_info.orientation || 'any'
+        width: this.media_match.width,
+        height: this.media_match.height,
+        orientation: this.media_match.orientation || 'any'
       },
-      extractQuery: extract_query
+      extractQuery: media_extract
     };
     string = rework(string).use(move).use(extract(extractOptions)).toString();
   }

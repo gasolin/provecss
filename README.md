@@ -8,6 +8,8 @@ Write future-proved CSS from now.
 Features
 ========
 
+[Support test cases](https://github.com/gasolin/provecss/tree/master/test/features) demostrate the input and output result of `provecss`.
+
 Import inlining
 -----------------
 
@@ -69,7 +71,7 @@ headers {
 Media Query filtering
 ----------------------
 
-Pass `target` option as ['core', 'large'] to filter out other styles.
+Pass `media_filter` option as ['core', 'large'] to filter out other styles.
 
 Output:
 ```css
@@ -87,7 +89,7 @@ headers {
 Media Query matching
 ----------------------
 
-An alternative way is to pass `deviceInfo` option as filter creteria.
+An alternative way is to pass `media_match` option as filter creteria.
 
 Input with `{ width: '1024px', height: '768px' }` to match proper size of @media.
 
@@ -108,7 +110,7 @@ headers {
 Media Query extracting
 ----------------------
 
-Pass extra `extractQuery` option as `true`
+Pass extra `media_extract` option as `true`
 
 Output:
 ```css
@@ -180,10 +182,10 @@ provecss(input, {path: 'test/features/imprt.css'});
 * `browsers`: Pass [autoprefixer](https://github.com/ai/autoprefixer) options. pass `firefox 24` or `chrome 10` will generate browser only prefixes. `provecss` won't generate prefixes by default.
 * `path`: File path that contain @import.
 * `base`: Normally provecss will parsed the same directory as in file path. you could explicitly pass a `path` option for will-be-import styles.
-* `target`: While precoess @import, The postfix `_<target>` will be filtered.
+* `media_filter`: While precoess @import, The postfix `_<target>` will be filtered.
+* `media_match`: specify the match creteria to filter out @media conditions.
+* `media_extract`: set to `true` to remove @media statement.
 * `vars`: replace css variable while `true`.
-* `deviceInfo`: specify the match creteria to filter out @media conditions.
-* `extractQuery`: set to `true` to remove @media statement.
 
 Usage (in command line)
 ==========================

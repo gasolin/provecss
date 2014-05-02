@@ -59,32 +59,32 @@ describe('@import inlining feature', function () {
                    output.trim());
   });
 
-  it('should generate css based on target option (core)', function () {
+  it('should generate css based on media_filter option (core)', function () {
       var input = read('features/imprt');
       var output = read('features/imprt_core.out');
       var option = {
         path: 'test/features/imprt.css',
-        target: ['core']
+        media_filter: ['core']
       };
       assert.equal(provecss(input, option).trim(), output.trim());
   });
 
-  it('should generate css based on target option (core+large)', function () {
+  it('should generate css based on media_filter option (core+large)', function () {
       var input = read('features/imprt');
       var output = read('features/imprt_large.out');
       var option = {
         path: 'test/features/imprt.css',
-        target: ['core', 'large']
+        media_filter: ['core', 'large']
       };
       assert.equal(provecss(input, option).trim(), output.trim());
   });
 
-  it('should generate css based on target option (core+xlarge)', function () {
+  it('should generate css based on media_filter option (core+xlarge)', function () {
       var input = read('features/imprt');
       var output = read('features/imprt_xlarge.out');
       var option = {
         path: 'test/features/imprt.css',
-        target: ['core', 'xlarge']
+        media_filter: ['core', 'xlarge']
       };
       assert.equal(provecss(input, option).trim(), output.trim());
   });
@@ -94,7 +94,7 @@ describe('@import inlining feature', function () {
       var output = read('features/imprt.out');
       var option = {
         path: 'test/features/imprt.css',
-        target: ['core', 'large' , 'xlarge']
+        media_filter: ['core', 'large' , 'xlarge']
       };
       assert.equal(provecss(input, option).trim(), output.trim());
   });
@@ -132,15 +132,15 @@ describe('auto prefix feature', function () {
 });
 
 /**
- * filter @media feature
+ * @media match and extract feature
  */
-describe('filter @media feature', function () {
-  it('should filter @media based on device info', function () {
+describe('@media match and extract feature', function () {
+  it('should match @media based on device info', function () {
       var input = read('features/imprt');
       var output = read('features/imprt_filter.out');
       var option = {
         path: 'test/features/imprt.css',
-        deviceInfo: {
+        media_match: {
           width: '1024px',
           height: '768px'
         }
@@ -148,16 +148,16 @@ describe('filter @media feature', function () {
       assert.equal(provecss(input, option).trim(), output.trim());
   });
 
-  it('should filter and extract @media based on device info', function () {
+  it('should match and extract @media based on device info', function () {
       var input = read('features/imprt');
       var output = read('features/imprt_extract.out');
       var option = {
         path: 'test/features/imprt.css',
-        deviceInfo: {
+        media_match: {
           width: '1024px',
           height: '768px'
         },
-        extractQuery: true
+        media_extract: true
       };
       assert.equal(provecss(input, option).trim(), output.trim());
   });
