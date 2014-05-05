@@ -213,15 +213,15 @@ provecss color.css color.out.css [options]
 * `--vars`: enable css variable replacing
 * `--import`: enable File path that contain @media import
 
-Credit
-========
-`provecss` is based on [rework](https://github.com/reworkcss/rework).
-Forked from [myth](https://github.com/segmentio/myth) and [rework-importer](https://github.com/simme/rework-importer) to fit our needs.
-
 Usage (in grunt)
 ======================
 
 Grunt plugin is available in https://www.npmjs.org/package/grunt-provecss
+
+Credit
+========
+`provecss` is based on [rework](https://github.com/reworkcss/rework).
+Forked from [myth](https://github.com/segmentio/myth) and [rework-importer](https://github.com/simme/rework-importer) to fit our needs.
 
 License
 ========
