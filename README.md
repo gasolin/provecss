@@ -197,7 +197,17 @@ provecss(input, {path: 'test/features/imprt.css'});
 Usage (in command line)
 ==========================
 
-TBD
+You can Run command in console
+
+```
+provecss source target [options]
+```
+
+For example
+
+```
+provecss color.css color.out.css
+```
 
 Credit
 ========
