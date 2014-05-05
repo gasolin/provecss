@@ -206,12 +206,12 @@ provecss source target [options]
 For example
 
 ```
-provecss color.css color.out.css
+provecss color.css color.out.css [options]
 ```
 
 **Options**
 * `vars`: enable css variable replacing
-* `import`: enable File path that contain
+* `import`: enable File path that contain @media import
 
 Credit
 ========
