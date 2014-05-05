@@ -5,7 +5,7 @@ var processor = require('./index');
 var fs = require('fs');
 
 program
-  .version('0.4.0')
+  .version('0.4.1')
   .option('-v, --vars', 'enable CSS variable replacing')
   .option('-i, --import', 'enable @media import inlining')
   .parse(process.argv);

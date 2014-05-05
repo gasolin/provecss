@@ -61,7 +61,7 @@ function provecss(string, options) {
         height: this.media_match.height,
         orientation: this.media_match.orientation || 'any'
       },
-      extractQuery: media_extract
+      extractQuery: this.media_extract
     };
     string = rework(string).use(move).use(extract(extractOptions)).toString();
   }
