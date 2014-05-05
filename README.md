@@ -210,8 +210,8 @@ provecss color.css color.out.css [options]
 ```
 
 **Options**
-* `vars`: enable css variable replacing
-* `import`: enable File path that contain @media import
+* `--vars`: enable css variable replacing
+* `--import`: enable File path that contain @media import
 
 Credit
 ========
