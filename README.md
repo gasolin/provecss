@@ -1,8 +1,8 @@
 provecss
-[![Build Status](https://travis-ci.org/mozilla-b2g/gaia.svg)](https://travis-ci.org/gasolin/provecss) [![Dependency Status](https://david-dm.org/gasolin/provecss.svg)](https://david-dm.org/gasolin/provecss) [![Code Climate](https://codeclimate.com/github/gasolin/provecss.png)](https://codeclimate.com/github/gasolin/provecss)
-=======
-
+=========
 Write future-proved CSS from now.
+
+[![Build Status](https://travis-ci.org/mozilla-b2g/gaia.svg)](https://travis-ci.org/gasolin/provecss) [![Dependency Status](https://david-dm.org/gasolin/provecss.svg)](https://david-dm.org/gasolin/provecss) [![Code Climate](https://codeclimate.com/github/gasolin/provecss.png)](https://codeclimate.com/github/gasolin/provecss)
 
 `provecss` let us able to use [@import](https://developer.mozilla.org/en-US/docs/Web/CSS/@import), [@media queries](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries), [variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables) in mobile-first webapp development without worring the performance. `provecss` could preprocess the origin css file and generate backward compatible css styles.
 
@@ -208,6 +208,10 @@ For example
 ```
 provecss color.css color.out.css
 ```
+
+**Options**
+* vars: enable css variable replacing
+* import: enable File path that contain
 
 Credit
 ========

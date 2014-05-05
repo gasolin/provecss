@@ -7,6 +7,7 @@ var fs = require('fs');
 program
   .version('0.4.0')
   .option('-v, --vars', 'enable CSS variable replacing')
+  .option('-i, --import', 'enable @media import inlining')
   .parse(process.argv);
 
 if (process.argv.length < 4) {
@@ -17,7 +18,10 @@ if (process.argv.length < 4) {
   var dest = process.argv[3];
 
   if (program.vars) {
-    option.vars = program.vars
+    option.vars = program.vars;
+  }
+  if (program.import) {
+    option.path = src;
   }
   // read file
   var input = fs.readFileSync(src, 'utf8');
