@@ -1,4 +1,5 @@
-provecss [![Build Status](https://travis-ci.org/mozilla-b2g/gaia.svg)](https://travis-ci.org/gasolin/provecss) [![Dependency Status](https://david-dm.org/gasolin/provecss.svg)](https://david-dm.org/gasolin/provecss) [![Code Climate](https://codeclimate.com/github/gasolin/provecss.png)](https://codeclimate.com/github/gasolin/provecss)
+provecss
+[![Build Status](https://travis-ci.org/mozilla-b2g/gaia.svg)](https://travis-ci.org/gasolin/provecss) [![Dependency Status](https://david-dm.org/gasolin/provecss.svg)](https://david-dm.org/gasolin/provecss) [![Code Climate](https://codeclimate.com/github/gasolin/provecss.png)](https://codeclimate.com/github/gasolin/provecss)
 =======
 
 Write future-proved CSS from now.
@@ -202,6 +203,11 @@ Credit
 ========
 `provecss` is based on [rework](https://github.com/reworkcss/rework).
 Forked from [myth](https://github.com/segmentio/myth) and [rework-importer](https://github.com/simme/rework-importer) to fit our needs.
+
+Usage (in grunt)
+======================
+
+Grunt plugin is available in https://www.npmjs.org/package/grunt-provecss
 
 License
 ========
