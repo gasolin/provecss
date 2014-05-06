@@ -59,42 +59,42 @@ describe('@import inlining feature', function () {
                    output.trim());
   });
 
-  it('should generate css based on media_filter option (core)', function () {
+  it('should generate css based on import_filter option (core)', function () {
       var input = read('features/imprt');
       var output = read('features/imprt_core.out');
       var option = {
         path: 'test/features/imprt.css',
-        media_filter: ['core']
+        import_filter: ['core']
       };
       assert.equal(provecss(input, option).trim(), output.trim());
   });
 
-  it('should generate css based on media_filter option (core+large)', function () {
+  it('should generate css based on import_filter option (core+large)', function () {
       var input = read('features/imprt');
       var output = read('features/imprt_large.out');
       var option = {
         path: 'test/features/imprt.css',
-        media_filter: ['core', 'large']
+        import_filter: ['core', 'large']
       };
       assert.equal(provecss(input, option).trim(), output.trim());
   });
 
-  it('should generate css based on media_filter option (core+xlarge)', function () {
+  it('should generate css based on import_filter option (core+xlarge)', function () {
       var input = read('features/imprt');
       var output = read('features/imprt_xlarge.out');
       var option = {
         path: 'test/features/imprt.css',
-        media_filter: ['core', 'xlarge']
+        import_filter: ['core', 'xlarge']
       };
       assert.equal(provecss(input, option).trim(), output.trim());
   });
 
-  it('should generate css based on target option (core+large+xlarge)', function () {
+  it('should generate css based on import_filter option (core+large+xlarge)', function () {
       var input = read('features/imprt');
       var output = read('features/imprt.out');
       var option = {
         path: 'test/features/imprt.css',
-        media_filter: ['core', 'large' , 'xlarge']
+        import_filter: ['core', 'large' , 'xlarge']
       };
       assert.equal(provecss(input, option).trim(), output.trim());
   });

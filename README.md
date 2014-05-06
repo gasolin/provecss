@@ -69,10 +69,10 @@ headers {
 }
 ```
 
-Media Query filtering
+Import filtering
 ----------------------
 
-Pass `media_filter` option as ['core', 'large'] to filter out other styles.
+Pass `import_filter` option as ['core', 'large'] to filter out other styles.
 
 Output:
 ```css

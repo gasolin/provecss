@@ -30,7 +30,7 @@ function provecss(string, options) {
     this.import_path  = path.basename(options.path);
     this.import_base  = options.base || path.dirname(options.path);
   }
-  this.media_filter  = options.media_filter;
+  this.import_filter  = options.import_filter;
   this.vars           = options.vars;
   this.media_match    = options.media_match;
   this.media_extract  = options.media_extract;
@@ -45,7 +45,7 @@ function provecss(string, options) {
     var opts = {
       path: this.import_path,
       base: this.import_base,
-      target: this.media_filter
+      target: this.import_filter
     };
     string = rework(string).use(imprt(opts)).toString();
   }
