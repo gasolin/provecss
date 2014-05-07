@@ -4,11 +4,16 @@ var program = require('commander');
 var processor = require('./index');
 var fs = require('fs');
 
+function filter(val) {
+  return val.split(',');
+}
+
 program
   .version('0.4.2')
   .usage('source target [options]')
   .option('-v, --vars', 'enable CSS variable replacing')
   .option('-i, --import', 'enable @media import inlining')
+  .option('-f, --filter <items>', 'enable import filtering', filter)
   .parse(process.argv);
 
 if (process.argv.length < 4) {
@@ -23,6 +28,9 @@ if (process.argv.length < 4) {
   }
   if (program.import) {
     option.path = src;
+  }
+  if (program.filter) {
+    option.import_filter = program.filter;
   }
   // read file
   var input = fs.readFileSync(src, 'utf8');
