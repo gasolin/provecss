@@ -22,7 +22,7 @@ function match(val) {
 }
 
 program
-  .version('0.4.2')
+  .version('0.5.0')
   .usage('source target [options]')
   .option('-v, --vars', 'enable CSS variable replacing')
   .option('-i, --import', 'enable import inlining')
