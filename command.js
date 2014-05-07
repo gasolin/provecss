@@ -8,12 +8,27 @@ function filter(val) {
   return val.split(',');
 }
 
+function match(val) {
+  var deviceinfo = val.split('x');
+  if (deviceinfo.length === 2) {
+    return {
+      width: parseInt(deviceinfo[0]) + 'px',
+      height: parseInt(deviceinfo[1]) + 'px'
+    };
+  } else {
+    console.log('the match option should fit [width]x[height] format');
+    return {};
+  }
+}
+
 program
   .version('0.4.2')
   .usage('source target [options]')
   .option('-v, --vars', 'enable CSS variable replacing')
   .option('-i, --import', 'enable import inlining')
-  .option('-f, --filter <items>', 'enable import filtering', filter)
+  .option('-f, --filter <targets>', 'enable import filtering', filter)
+  .option('-m, --match <WidthxHeight>', 'enable media matching', match)
+  .option('-e, --extract', 'enable media extracting')
   .parse(process.argv);
 
 if (process.argv.length < 4) {
@@ -33,6 +48,13 @@ if (process.argv.length < 4) {
     option.path = src; //carry on import inlining
     option.import_filter = program.filter;
   }
+  if (program.match) {
+    option.media_match = program.match;
+  }
+  if(program.extract) {
+    option.media_extract = program.extract;       
+  }
+
   // read file
   var input = fs.readFileSync(src, 'utf8');
   var output = processor(input, option);

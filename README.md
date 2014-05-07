@@ -211,8 +211,10 @@ provecss color.css color.out.css [options]
 
 **Options**
 * `--vars`: enable css variable replacing
-* `--import`: enable File path that contain import inlining
-* `--import`: enable File path that contain import filtlt
+* `--import`: enable import inlining
+* `--filter [targets]`: enable import filtering
+* `--match [width]x[height]`: enable media matching
+* `--extract`: enable media extracting
 
 Usage (with grunt)
 ======================
