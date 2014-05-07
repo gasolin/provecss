@@ -211,7 +211,8 @@ provecss color.css color.out.css [options]
 
 **Options**
 * `--vars`: enable css variable replacing
-* `--import`: enable File path that contain @media import
+* `--import`: enable File path that contain import inlining
+* `--import`: enable File path that contain import filtlt
 
 Usage (with grunt)
 ======================
