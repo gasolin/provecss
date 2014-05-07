@@ -12,7 +12,7 @@ program
   .version('0.4.2')
   .usage('source target [options]')
   .option('-v, --vars', 'enable CSS variable replacing')
-  .option('-i, --import', 'enable @media import inlining')
+  .option('-i, --import', 'enable import inlining')
   .option('-f, --filter <items>', 'enable import filtering', filter)
   .parse(process.argv);
 
