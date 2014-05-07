@@ -30,6 +30,7 @@ if (process.argv.length < 4) {
     option.path = src;
   }
   if (program.filter) {
+    option.path = src; //carry on import inlining
     option.import_filter = program.filter;
   }
   // read file
