@@ -137,12 +137,25 @@ describe('auto prefix feature', function () {
 describe('@media match and extract feature', function () {
   it('should match @media based on device info', function () {
       var input = read('features/imprt');
-      var output = read('features/imprt_filter.out');
+      var output = read('features/imprt_match.out');
       var option = {
         path: 'test/features/imprt.css',
         media_match: {
           width: '1024px',
           height: '768px'
+        }
+      };
+      assert.equal(provecss(input, option).trim(), output.trim());
+  });
+
+    it('should match @media based on device info 2', function () {
+      var input = read('features/imprt');
+      var output = read('features/imprt_match2.out');
+      var option = {
+        path: 'test/features/imprt.css',
+        media_match: {
+          width: '800px',
+          height: '600px'
         }
       };
       assert.equal(provecss(input, option).trim(), output.trim());
