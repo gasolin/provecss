@@ -6,12 +6,13 @@ var fs = require('fs');
 
 program
   .version('0.4.2')
+  .usage('source target [options]')
   .option('-v, --vars', 'enable CSS variable replacing')
   .option('-i, --import', 'enable @media import inlining')
   .parse(process.argv);
 
 if (process.argv.length < 4) {
-  console.log('the syntax should be `provecss source target [options]`');
+  console.log(program.help());
 } else {
   var option = {};
   var src = process.argv[2];
