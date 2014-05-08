@@ -148,7 +148,7 @@ describe('@media match and extract feature', function () {
       assert.equal(provecss(input, option).trim(), output.trim());
   });
 
-    it('should match @media based on device info 2', function () {
+  it('should match @media based on device info 2', function () {
       var input = read('features/imprt');
       var output = read('features/imprt_match2.out');
       var option = {

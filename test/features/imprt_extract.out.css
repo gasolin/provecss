@@ -3,5 +3,9 @@ headers {
 }
 
 headers {
+  background-color: black;
+}
+
+headers {
   background-color: red;
 }

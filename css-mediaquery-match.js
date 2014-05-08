@@ -44,6 +44,13 @@ function matchQuery(mediaQuery, values) {
       switch (feature) {
         case 'orientation':
           return value.toLowerCase() === expValue.toLowerCase();
+        case 'width':
+        case 'height':
+        case 'device-width':
+        case 'device-height':
+          value = parseFloat(value);
+          expValue = parseFloat(expValue);
+          break;
       }
 
       switch (modifier) {

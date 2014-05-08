@@ -7,9 +7,3 @@ headers {
     background-color: black;
   }
 }
-
-@media (min-width: 1024px) {
-  headers {
-    background-color: red;
-  }
-}
