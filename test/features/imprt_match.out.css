@@ -2,6 +2,12 @@ headers {
   background-color: orange;
 }
 
+@media (min-width: 768px) {
+  headers {
+    background-color: black;
+  }
+}
+
 @media (min-width: 1024px) {
   headers {
     background-color: red;
