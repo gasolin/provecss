@@ -186,13 +186,19 @@ provecss(input, {path: 'test/features/imprt.css'});
 
 **Options**
 
-* `browsers`: Pass [autoprefixer](https://github.com/ai/autoprefixer) options. pass `firefox 24` or `chrome 10` will generate browser only prefixes. `provecss` won't generate prefixes by default.
+* `browsers`: Pass [autoprefixer options](https://github.com/ai/autoprefixer#browsers) here. pass `firefox 24` or `chrome 10` will generate browser only prefixes. `provecss` won't generate prefixes by default.
 * `path`: File path that contain @import.
 * `base`: Normally provecss will parsed the same directory as in file path. you could explicitly pass a `path` option for will-be-import styles.
 * `media_filter`: While precoess @import, The postfix `_<target>` will be filtered.
 * `media_match`: specify the match creteria to filter out @media conditions.
 * `media_extract`: set to `true` to remove @media statement.
-* `vars`: replace css variable while `true`.
+* `vars`: replace css variable while `true`. `provecss` won't do variable replacing by default.
+
+Usage (with grunt)
+======================
+
+Grunt plugin is available in https://www.npmjs.org/package/grunt-provecss
+Pass same options as use in node.
 
 Usage (in command line)
 ==========================
@@ -215,11 +221,8 @@ provecss color.css color.out.css [options]
 * `--filter [targets]`: enable import filtering
 * `--match [width]x[height]`: enable media matching
 * `--extract`: enable media extracting
+* `--browsers <browsers>`, 'enable auto-prefixing, pass [autoprefixer options](https://github.com/ai/autoprefixer#browsers) here. `all` option is the short cut to fit all major browsers.
 
-Usage (with grunt)
-======================
-
-Grunt plugin is available in https://www.npmjs.org/package/grunt-provecss
 
 Credit
 ========

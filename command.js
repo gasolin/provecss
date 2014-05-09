@@ -21,6 +21,13 @@ function match(val) {
   }
 }
 
+function browsers(val) {
+  if (val === 'all') {
+     val = '> 1%,last 2 versions,Firefox ESR,Opera 12.1,BlackBerry 10,Android 4'; 
+  }
+  return val.split(',');
+}
+
 program
   .version('0.5.0')
   .usage('source target [options]')
@@ -29,9 +36,11 @@ program
   .option('-f, --filter <targets>', 'enable import filtering', filter)
   .option('-m, --match <WidthxHeight>', 'enable media matching', match)
   .option('-e, --extract', 'enable media extracting')
+  .option('-b, --browsers <browsers>', 'enable auto-prefixing', browsers)
   .parse(process.argv);
 
-if (process.argv.length < 4) {
+if ((process.argv.length < 4) ||
+   (process.argv[2].indexOf('--') !== -1 || process.argv[3].indexOf('--') !== -1)) {
   console.log(program.help());
 } else {
   var option = {};
@@ -51,8 +60,12 @@ if (process.argv.length < 4) {
   if (program.match) {
     option.media_match = program.match;
   }
-  if(program.extract) {
+  if (program.extract) {
     option.media_extract = program.extract;       
+  }
+  if (program.browsers) {
+    console.log('applying rule: ' + program.browsers);
+    option.browsers = program.browsers;       
   }
 
   // read file
