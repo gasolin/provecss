@@ -1,5 +1,7 @@
 provecss
 =========
+**DEPRECATED, please use [postcss-cssnext](https://github.com/MoOx/postcss-cssnext) instead**
+
 Write future-proved CSS from now.
 
 [![Build Status](https://travis-ci.org/mozilla-b2g/gaia.svg)](https://travis-ci.org/gasolin/provecss) [![NPM version](https://badge.fury.io/js/provecss.svg)](http://badge.fury.io/js/provecss) [![Dependency Status](https://david-dm.org/gasolin/provecss.svg)](https://david-dm.org/gasolin/provecss) [![Code Climate](https://codeclimate.com/github/gasolin/provecss.png)](https://codeclimate.com/github/gasolin/provecss)
